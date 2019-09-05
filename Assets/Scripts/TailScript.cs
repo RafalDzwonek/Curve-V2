@@ -57,13 +57,10 @@ public class TailScript : MonoBehaviour
                 pointsCorrected.Add(result);
             }
             col.points = pointsCorrected.ToArray<Vector2>();
-            Debug.Log("Original point:" + points[points.Count - 1]);
-            Debug.Log("Converted point:" + col.points[col.points.Count<Vector2>() - 1]);
         }
 
         //dodawaj punkty do listy
         points.Add(snake.position);
-        Debug.Log(snake.rotation);
 
         //ustaw pierwszy punkt
         line.positionCount = points.Count;

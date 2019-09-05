@@ -46,4 +46,9 @@ public class Movement : NetworkBehaviour
             rotationSpeed = 0f;
         }
     }
+
+    public void SetSpeedToZero()
+    {
+        speed = 0;
+    }
 }
