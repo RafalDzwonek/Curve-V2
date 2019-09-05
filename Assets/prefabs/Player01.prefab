@@ -172,6 +172,8 @@ GameObject:
   - component: {fileID: 7707043287801331411}
   - component: {fileID: 3930551125970849096}
   - component: {fileID: 4073922839877998702}
+  - component: {fileID: 2452166529654038117}
+  - component: {fileID: 7933813114063839977}
   m_Layer: 0
   m_Name: Player01
   m_TagString: Untagged
@@ -262,6 +264,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8984096a9c4bdb64bb93a34c81752a56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2452166529654038117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348254892501779602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1267208747, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Target: {fileID: 348254893115000813}
+  m_ChildIndex: 0
+  m_SendInterval: 0.033333335
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_MovementThreshold: 0.001
+  m_InterpolateRotation: 0.5
+  m_InterpolateMovement: 0.5
+--- !u!114 &7933813114063839977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348254892501779602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1267208747, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Target: {fileID: 348254891806185686}
+  m_ChildIndex: 1
+  m_SendInterval: 0.1
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_MovementThreshold: 0.001
+  m_InterpolateRotation: 0.5
+  m_InterpolateMovement: 0.5
 --- !u!1 &348254893115000814
 GameObject:
   m_ObjectHideFlags: 0
@@ -356,7 +398,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0511b73c881205b4f95ae1e5fee74275, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.2
+  speed: 0.5
   rotationSpeed: 100
   buttonLeft: 97
   buttonRight: 100
@@ -395,5 +437,5 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
