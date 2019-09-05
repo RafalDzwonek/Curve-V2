@@ -46,6 +46,8 @@ public class TailScript : MonoBehaviour
         if (points.Count > 1)
         {
             col.points = points.ToArray<Vector2>();
+            Debug.Log("Original point:" + points[points.Count - 1]);
+            Debug.Log("Converted point:" + col.points[col.points.Count<Vector2>() - 1]);
         }
 
         //dodawaj punkty do listy
