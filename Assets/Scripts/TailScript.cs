@@ -15,6 +15,9 @@ public class TailScript : MonoBehaviour
     public Color color = Color.red;
     //lista punktów na którym jest budowanya linia
     List<Vector2> points;
+    List<Vector2> pointsCorrected;
+    Vector2 correct;
+    Quaternion rotation;
 
     LineRenderer line;
     EdgeCollider2D col;
@@ -28,7 +31,9 @@ public class TailScript : MonoBehaviour
         line.material.color = color;
         //wyresetuj na początek
         points = new List<Vector2>();
+        pointsCorrected = new List<Vector2>();
         SetPoint();
+        correct = snake.position;
     }
 
     // Update is called once per frame
@@ -45,13 +50,20 @@ public class TailScript : MonoBehaviour
     {
         if (points.Count > 1)
         {
-            col.points = points.ToArray<Vector2>();
+            pointsCorrected.Clear();
+            foreach (Vector2 item in points)
+            {
+                var result = item - correct;
+                pointsCorrected.Add(result);
+            }
+            col.points = pointsCorrected.ToArray<Vector2>();
             Debug.Log("Original point:" + points[points.Count - 1]);
             Debug.Log("Converted point:" + col.points[col.points.Count<Vector2>() - 1]);
         }
 
         //dodawaj punkty do listy
         points.Add(snake.position);
+        Debug.Log(snake.rotation);
 
         //ustaw pierwszy punkt
         line.positionCount = points.Count;
