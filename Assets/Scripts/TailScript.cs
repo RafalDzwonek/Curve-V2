@@ -28,7 +28,6 @@ public class TailScript : MonoBehaviour
         line = GetComponent<LineRenderer>();
         col = GetComponent<EdgeCollider2D>();
 
-        line.material.color = color;
         //wyresetuj na początek
         points = new List<Vector2>();
         pointsCorrected = new List<Vector2>();
