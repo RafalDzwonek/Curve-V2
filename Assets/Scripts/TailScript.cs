@@ -12,7 +12,6 @@ public class TailScript : MonoBehaviour
         // przerwa pomiędzy punktami
     public float pointSpacing = .1f;
     public Transform snake;
-    public Color color = Color.red;
     //lista punktów na którym jest budowanya linia
     List<Vector2> points;
     List<Vector2> pointsCorrected;

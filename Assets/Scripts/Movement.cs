@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Networking;
+
+
 public class Movement : NetworkBehaviour
 {
     public float speed = 0f;
@@ -7,6 +9,7 @@ public class Movement : NetworkBehaviour
     public KeyCode buttonLeft = KeyCode.A;
     public KeyCode buttonRight = KeyCode.D;
     bool ready = false;
+
 
     float horizontal = 0f;
 
@@ -40,9 +43,11 @@ public class Movement : NetworkBehaviour
         //rzuć texboxa do tej formuły !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         if (col.tag == "killer")
         {
+            
             GameManager.FindObjectOfType<GameManager>().TheEndgame();
             speed = 0f;
             rotationSpeed = 0f;
+            Object.Destroy(transform.parent.gameObject);
         }
     }
 

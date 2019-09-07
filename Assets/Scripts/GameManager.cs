@@ -1,8 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections.Generic;
-using System.Linq;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,12 +9,9 @@ public class GameManager : MonoBehaviour
 
     bool hasEnded = false;
     bool running = false;
-    GameObject[] players;
-
-    private void Update()
-    {
-   
-    }
+    GameObject[] player;
+    string playerName;
+    public GameObject txt;
 
     public void TheEndgame()
     {
@@ -23,8 +19,16 @@ public class GameManager : MonoBehaviour
         {
             return;
         }
+        //tutaj robię magię
+        //player = GameObject.FindGameObjectsWithTag("player");
+        //if (player.Length ==1)
+        //{
+        //   playerName = GameObject.FindGameObjectWithTag("player").name;
+        //}
+        //txt.SetActive(true);
+        //txt.GetComponent<Text>().text = "Gratulacje! Wygrał gracz " + playerName + "!";
+        // tutaj kończę magię
 
-        // dodać txxtboxy!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         Debug.Log("ZDECHŁEŚ");
         hasEnded = true;
         StartCoroutine(PlayEndgame());
@@ -34,13 +38,16 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("KONIEC GRY");
 
-        //po sekundzie zrestartuj gre
+        //po czasie zrestartuj gre
         yield return new WaitForSeconds(5f);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        //bool hasEnded = false;
+        //bool running = false;
+        SceneManager.LoadScene("Lobby");
+
     }
 
-    IEnumerator WaitSecond()
-    {
-        yield return new WaitForSeconds(1);
-    }
+    //IEnumerator WaitSecond()
+    //{
+    //    yield return new WaitForSeconds(1);
+    //}
 }
