@@ -50,7 +50,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 1759f428112a3754d9236569accbbd3b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -265,6 +265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8984096a9c4bdb64bb93a34c81752a56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &2452166529654038117
 MonoBehaviour:
   m_ObjectHideFlags: 0

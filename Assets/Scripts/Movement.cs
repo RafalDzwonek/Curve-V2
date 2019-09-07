@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.Networking;
-
 public class Movement : NetworkBehaviour
 {
     public float speed = 0f;
