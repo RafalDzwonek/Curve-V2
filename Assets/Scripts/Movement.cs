@@ -10,8 +10,7 @@ public class Movement : NetworkBehaviour
     public KeyCode buttonRight = KeyCode.D;
     bool ready = false;
 
-
-    float horizontal = 0f;
+    public float horizontal = 0f;
 
     // Update is called once per frame
     void Update()
