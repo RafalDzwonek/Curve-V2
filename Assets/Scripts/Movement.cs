@@ -9,13 +9,27 @@ public class Movement : NetworkBehaviour
     public KeyCode buttonLeft = KeyCode.A;
     public KeyCode buttonRight = KeyCode.D;
     bool ready = false;
+    bool button;
 
     public float horizontal = 0f;
 
-    // Update is called once per frame
+    private void Start()
+    {
+        button = gameObject.GetComponent<ControlUIScript>().left;
+    }
+
     void Update()
     {
-        if (Input.GetKey(buttonLeft))
+        //Debug.Log(horizontal);
+        /*if (gameObject.GetComponent<ControlUIScript>() == null)
+        {
+            Debug.Log("NIE ZNALEZIONO OBIEKTU ControlUIScript");
+        }
+        else if (gameObject.GetComponent<ControlUIScript>().left==null)
+        {
+            Debug.Log("LEFT JEST NULLEM");
+        }
+        else */ if (Input.GetKey(buttonLeft) || button==true )
         {
             horizontal = -1;
         }

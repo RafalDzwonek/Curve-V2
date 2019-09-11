@@ -2,24 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ControlUIScript : Movement
+public class ControlUIScript : MonoBehaviour
 {
-    public bool left;
-    public bool right;
+    public bool left=false;
+    public bool right=false;
 
-    // Update is called once per frame
-    public void IsLeftPushed()
+    private void Start()
     {
-        left = true;
-       
+       left = false;
+        right = false;
     }
 
+    public void IsLeftPressed()
+    {
+        left = true;
+    }
     public void IsLeftLeft()
     {
         left = false;
     }
 
-    public void IsRightPushed()
+    public void IsRightPressed()
     {
         right = true;
     }
@@ -28,28 +31,25 @@ public class ControlUIScript : Movement
     {
         right = false;
     }
+
     void Update()
     {
-        Debug.Log(horizontal);
-        if (left)
-        {
-            horizontal = -1;
-        }
-        else if (right)
-        {
-            horizontal = 1;
-        }
-        else
-        {
-            horizontal = 0;
-        }
+        //Debug.Log(left);
+        //Debug.Log(gameObject.GetComponent<Movement>().horizontal);
+        //if (left)
+        //{
+        //    gameObject.GetComponent<Movement>().horizontal = -1;
+        //}
+        //else if (right)
+        //{
+        //    gameObject.GetComponent<Movement>().horizontal = 1;
+        //}
+        //else
+        //{
+        //    gameObject.GetComponent<Movement>().horizontal = 0;
+        //}
     }
 
-    private void FixedUpdate()
-    {
-        //wzor na poruszanie
-        transform.Translate(Vector2.up * speed * Time.fixedDeltaTime, Space.Self);
-        //obrót
-        transform.Rotate(Vector3.forward * -horizontal * rotationSpeed * Time.fixedDeltaTime);
-    }
+
+
 }
