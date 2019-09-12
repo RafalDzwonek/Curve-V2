@@ -1,6 +1,6 @@
 Win64
 PlayerPath?
-C:/Users/rafal/OneDrive/Desktop/Curve/Curve v2.exe
+C:/Users/Domin/Desktop/Gra/Curve v2.exe
 SceneListBegin?
 Assets/Scenes/MainMenu.unity
 Assets/Scenes/Lobby.unity
@@ -125,6 +125,7 @@ d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.Spa
 4d16cfbaa8e821a2b370e80844a0e9bc Assembly-CSharp.dll:TMPro.Examples.Benchmark03
 303ad70ce203ad874efe2965d0fbcff9 Unity.Analytics.Tracker.dll:UnityEngine.Analytics.AnalyticsEventTracker
 7fb9de8dcf73854b6b328eca1f7a6e6d Unity.Analytics.Tracker.dll:UnityEngine.Analytics.AnalyticsTracker
+164221013889a03b3422d30debb35460 Assembly-CSharp.dll:.ButtonLeft
 e6f0efd0e20669d577e9d21526b3d3f9 Assembly-CSharp.dll:TMPro.Examples.WarpTextExample
 dd7520b7d4e690e8c593273e7b9fbe80 Assembly-CSharp.dll:TMPro.Examples.TMP_TextEventCheck
 94017dcc9f00fe671ea7dc427b4da011 Unity.TextMeshPro.dll:TMPro.TMP_SpriteAsset
@@ -190,8 +191,8 @@ fb6a1ea36b4f6ef5948d283d93760765 UnityEngine.GoogleAudioSpatializer.dll:UnityEng
 ca1c9695bbafcb52af6a07f1bd4c4ea5 Assembly-CSharp.dll:TMPro.Examples.TMP_TextInfoDebugTool
 bd3f0ca738703903e759f77536ed74fd Assembly-CSharp.dll:TMPro.Examples.TMP_FrameRateCounter
 a1ca1237bad0f30ea5ba8f4060929114 Assembly-CSharp.dll:TMPro.Examples.TMP_TextSelector_B
+164221013889a03b3422d30debb35460 Assembly-CSharp.dll:.ButtonRight
 a4f0a4f62100f1a4fb5cbe0e00dde83f Unity.TextMeshPro.dll:TMPro.TextMeshProUGUI
-71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.ColliderFix
 5fc094978ce3e3591a7500ed380d854a Unity.Analytics.DataPrivacy.dll:UnityEngine.Analytics.DataPrivacyButton
 27e5341178f188b89bdc6495710b590c Assembly-CSharp.dll:TMPro.Examples.Benchmark01_UGUI
 32d17f5fed36bf7e8ca82ffb4c60a75b Assembly-CSharp.dll:.Movement
@@ -205,7 +206,6 @@ e63944317d2f5958e31963668bb29158 Assembly-CSharp.dll:TMPro.Examples.VertexShakeB
 bd3f0ca738703903e759f77536ed74fd Assembly-CSharp.dll:TMPro.Examples.TMP_UiFrameRateCounter
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:TMPro.Examples.VertexColorCycler
 e63944317d2f5958e31963668bb29158 Assembly-CSharp.dll:TMPro.Examples.VertexZoom
-2bcb9b5a1733bbba9e47f6f783df0ca4 Assembly-CSharp.dll:.ControlUIScript
 d791aa6007fa3640be1164ea75bb087d Unity.TextMeshPro.dll:TMPro.TMP_StyleSheet
 e80c1450883443c68d6c2dade213536f Assembly-CSharp.dll:TMPro.Examples.TMPro_InstructionOverlay
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:TMPro.Examples.TeleType
@@ -218,6 +218,3 @@ c6666661329916e218bee7f5e79e60f5 Unity.TextMeshPro.dll:TMPro.TextMeshPro
 8649814970b42d345b89944b862453cc Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
 9dac16f3efc511835ac976dfae55f580 Assembly-CSharp.dll:.VariableJoystick
 ec47a49478d99d9bebb10dcf002ea058 Assembly-CSharp.dll:Prototype.NetworkLobby.LobbyServerList
-164221013889a03b3422d30debb35460 Assembly-CSharp.dll:.ButtonLeft
-164221013889a03b3422d30debb35460 Assembly-CSharp.dll:.ButtonRight
-71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.DestroyButtons
