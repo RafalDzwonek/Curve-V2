@@ -50,12 +50,15 @@ public class Movement : NetworkBehaviour
         //rzuć texboxa do tej formuły !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         if (col.tag == "killer")
         {
-            
-            GameManager.FindObjectOfType<GameManager>().TheEndgame();
-            speed = 0f;
-            rotationSpeed = 0f;
+
+            foreach (GameObject p in GameObject.FindGameObjectsWithTag("player"))
+            {
+                this.speed = 0f;
+                this.rotationSpeed = 0f;
+            }
             Object.Destroy(transform.parent.gameObject);
         }
+        GameManager.FindObjectOfType<GameManager>().TheEndgame();
     }
 
     public void SetSpeedToZero()

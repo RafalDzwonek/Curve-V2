@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,6 +13,11 @@ public class GameManager : MonoBehaviour
     string playerName;
     public GameObject txt;
 
+    //private void Start()
+    //{
+    //    player = GameObject.FindGameObjectsWithTag("player");
+    //}
+
     public void TheEndgame()
     {
         if (hasEnded)
@@ -20,13 +25,14 @@ public class GameManager : MonoBehaviour
             return;
         }
         //tutaj robię magię
-        //player = GameObject.FindGameObjectsWithTag("player");
-        //if (player.Length ==1)
+
+        //if (testowy != null)
         //{
-        //   playerName = GameObject.FindGameObjectWithTag("player").name;
+            playerName = GameObject.FindGameObjectWithTag("player").name;
+            txt.SetActive(true);
+            txt.GetComponent<TextMeshProUGUI>().text ="Gratulacje! Wygrał gracz " + playerName + "!";
         //}
-        //txt.SetActive(true);
-        //txt.GetComponent<Text>().text = "Gratulacje! Wygrał gracz " + playerName + "!";
+        
         // tutaj kończę magię
 
         Debug.Log("ZDECHŁEŚ");
