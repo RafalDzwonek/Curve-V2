@@ -12,15 +12,6 @@ public class NetworkLobbyHook : LobbyHook
         SetupLocalPlayer localPlayer = gamePlayer.GetComponent<SetupLocalPlayer>();
         localPlayer.playerColor = lobby.playerColor;
         localPlayer.playerName = lobby.playerName;
-        Debug.Log("Uruchomione");     
+        Debug.Log("Uruchomione");
     }
-
-    void Start()
-    {
-        foreach (GameObject p in GameObject.FindGameObjectsWithTag("player"))
-        {
-            this.name = GetComponentInChildren<SetupLocalPlayer>().
-        }
-    }
-
 }

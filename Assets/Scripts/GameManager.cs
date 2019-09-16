@@ -2,6 +2,8 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using Prototype.NetworkLobby;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,10 +15,14 @@ public class GameManager : MonoBehaviour
     string playerName;
     public GameObject txt;
 
-    //private void Start()
-    //{
-    //    player = GameObject.FindGameObjectsWithTag("player");
-    //}
+    private void Start()
+    {
+        foreach (GameObject p in GameObject.FindGameObjectsWithTag("player"))
+        {
+            if (p.name != null)
+            p.name = p.GetComponentInChildren<SetupLocalPlayer>().playerName;
+        }
+    }
 
     public void TheEndgame()
     {
@@ -45,10 +51,13 @@ public class GameManager : MonoBehaviour
         Debug.Log("KONIEC GRY");
 
         //po czasie zrestartuj gre
-        yield return new WaitForSeconds(5f);
-        //bool hasEnded = false;
-        //bool running = false;
-        SceneManager.LoadScene("Lobby");
+        yield return new WaitForSeconds(3f);
+        hasEnded = false;
+        running = false;
+
+        //use backbutton
+        Button backButton = gameObject.GetComponent<LobbyManager>().backButton;
+        backButton.GetComponentInChildren<LobbyManager>().GoBackButton();
 
     }
 

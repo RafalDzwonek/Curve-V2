@@ -7,7 +7,6 @@ public class ButtonLeft : MonoBehaviour
     public bool active = false;
     public void onPress()
     {
-        Debug.Log("Left pressed");
         active = true;
     }
 
