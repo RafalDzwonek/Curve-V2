@@ -18,7 +18,7 @@ public class Starfield : MonoBehaviour
     Transform theCamera;
     ParticleSystem Particles;
     ParticleSystem.Particle[] Stars;
-    public float theScrollSpeed = 0.025f;
+    public float theScrollSpeed = 1;
 
     void Awake()
     {
