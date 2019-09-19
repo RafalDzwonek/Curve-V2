@@ -1,6 +1,6 @@
 Win64
 PlayerPath?
-C:/Users/rafal/OneDrive/Desktop/Curve/Curve v2.exe
+H:/Projekt/curve_v2_build4/Curve v2.exe
 SceneListBegin?
 Assets/Scenes/MainMenu.unity
 Assets/Scenes/Lobby.unity

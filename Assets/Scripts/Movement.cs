@@ -61,10 +61,16 @@ public class Movement : NetworkBehaviour
         string actualWinner = "Suicidal toughts huh?";
         //rzuć texboxa do tej formuły !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         if (col.tag == "killer")
-        {     
+        {
             winner = col.transform.parent.name;
             Debug.Log("Uderzył: " + this.transform.parent.name);
             Debug.Log("Uderzył w: " + col.transform.parent.name);
+
+            if (winner == "walls")
+            {
+                winner = this.transform.parent.name;
+            }
+
             if (winner == this.transform.parent.name)
             {
                 foreach (GameObject p in GameObject.FindGameObjectsWithTag("player"))
@@ -72,12 +78,12 @@ public class Movement : NetworkBehaviour
                     if (p.name != winner)
                     {
                         actualWinner = p.name;
-                    }             
+                    }
                 }
-             winner = actualWinner;
+                winner = actualWinner;
             }
             GameManager.FindObjectOfType<GameManager>().RpcTheEndgame(winner);
-        }       
+        }
     }
 
     public void SetSpeedToZero()
