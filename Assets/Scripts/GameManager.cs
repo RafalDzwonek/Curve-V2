@@ -4,8 +4,9 @@ using UnityEngine.SceneManagement;
 using TMPro;
 using Prototype.NetworkLobby;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 
-public class GameManager : MonoBehaviour
+public class GameManager : NetworkBehaviour
 {
     //skrypt odpoiedzialny za grę
 
@@ -15,17 +16,24 @@ public class GameManager : MonoBehaviour
     string playerName;
     public GameObject txt;
 
-    private void Start()
+    [SyncVar]
+    string winner;
+
+    void StopPlayers()
     {
         foreach (GameObject p in GameObject.FindGameObjectsWithTag("player"))
         {
-            if (p.name != null)
-            p.name = p.GetComponentInChildren<SetupLocalPlayer>().playerName;
+            p.transform.GetComponentInChildren<Movement>().speed = 0f;
+            p.transform.GetComponentInChildren<Movement>().rotationSpeed = 0f;
         }
     }
 
-    public void TheEndgame()
+    [ClientRpc]
+    public void RpcTheEndgame(string name)
     {
+        StopPlayers();
+
+        winner = name;
         if (hasEnded)
         {
             return;
@@ -34,9 +42,8 @@ public class GameManager : MonoBehaviour
 
         //if (testowy != null)
         //{
-            playerName = GameObject.FindGameObjectWithTag("player").name;
             txt.SetActive(true);
-            txt.GetComponent<TextMeshProUGUI>().text ="Gratulacje! Wygrał gracz " + playerName + "!";
+            txt.GetComponent<TextMeshProUGUI>().text ="Winner is " + winner + "!";
         //}
         
         // tutaj kończę magię
@@ -56,14 +63,8 @@ public class GameManager : MonoBehaviour
         running = false;
 
         //use backbutton
-        Button backButton = gameObject.GetComponent<LobbyManager>().backButton;
-        backButton.GetComponentInChildren<LobbyManager>().GoBackButton();
-
+        GameObject backButton = GameObject.FindGameObjectWithTag("Back").gameObject;
+        Debug.Log("backbutton: " + backButton);
+        backButton.transform.GetComponentInChildren<LobbyManager>().GoBackButton();
     }
-
-    //IEnumerator WaitSecond()
-    //{
-    //    yield return new WaitForSeconds(1);
-    //}
-
 }

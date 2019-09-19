@@ -26,6 +26,9 @@ public class SetupLocalPlayer : NetworkBehaviour
             l.startColor = playerColor;
             l.endColor = playerColor;
         }
+
+        //przypisz nazwę gracza jako tag obiektu
+        gameObject.name = playerName;
     }
 
 }

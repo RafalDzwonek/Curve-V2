@@ -8,6 +8,7 @@ TagManager:
   - player
   - joystick
   - Buttons
+  - Back
   layers:
   - Default
   - TransparentFX

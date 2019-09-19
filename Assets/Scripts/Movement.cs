@@ -16,6 +16,7 @@ public class Movement : NetworkBehaviour
     private void Start()
     {
         buttons = GameObject.FindGameObjectWithTag("Buttons");
+        RpcSetNames();
     }
 
     void Update()
@@ -37,6 +38,15 @@ public class Movement : NetworkBehaviour
         }
     }
 
+    [ClientRpc]
+    void RpcSetNames()
+    {
+        foreach (GameObject p in GameObject.FindGameObjectsWithTag("player"))
+        {
+            p.name = p.transform.GetComponentInChildren<SetupLocalPlayer>().playerName;
+        }
+    }
+
     private void FixedUpdate()
     {
         //wzor na poruszanie
@@ -47,18 +57,27 @@ public class Movement : NetworkBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
+        string winner = "nobobdy";
+        string actualWinner = "Suicidal toughts huh?";
         //rzuć texboxa do tej formuły !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         if (col.tag == "killer")
-        {
-
-            foreach (GameObject p in GameObject.FindGameObjectsWithTag("player"))
+        {     
+            winner = col.transform.parent.name;
+            Debug.Log("Uderzył: " + this.transform.parent.name);
+            Debug.Log("Uderzył w: " + col.transform.parent.name);
+            if (winner == this.transform.parent.name)
             {
-                this.speed = 0f;
-                this.rotationSpeed = 0f;
+                foreach (GameObject p in GameObject.FindGameObjectsWithTag("player"))
+                {
+                    if (p.name != winner)
+                    {
+                        actualWinner = p.name;
+                    }             
+                }
+             winner = actualWinner;
             }
-            Object.Destroy(transform.parent.gameObject);
-        }
-        GameManager.FindObjectOfType<GameManager>().TheEndgame();
+            GameManager.FindObjectOfType<GameManager>().RpcTheEndgame(winner);
+        }       
     }
 
     public void SetSpeedToZero()
