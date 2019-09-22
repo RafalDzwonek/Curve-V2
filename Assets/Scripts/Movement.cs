@@ -8,7 +8,6 @@ public class Movement : NetworkBehaviour
     public float rotationSpeed = 200f;
     public KeyCode buttonLeft = KeyCode.A;
     public KeyCode buttonRight = KeyCode.D;
-    bool ready = false;
     GameObject buttons;
 
     public float horizontal = 0f;

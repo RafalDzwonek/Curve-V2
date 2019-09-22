@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -16,7 +15,6 @@ public class TailScript : MonoBehaviour
     List<Vector2> points;
     List<Vector2> pointsCorrected;
     Vector2 correct;
-    Quaternion rotation;
 
     LineRenderer line;
     EdgeCollider2D col;
@@ -63,7 +61,5 @@ public class TailScript : MonoBehaviour
         //ustaw pierwszy punkt
         line.positionCount = points.Count;
         line.SetPosition(points.Count - 1, snake.position);
-
-
     }
 }

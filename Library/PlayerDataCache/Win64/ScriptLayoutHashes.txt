@@ -1,6 +1,6 @@
 Win64
 PlayerPath?
-H:/Projekt/curve_v2_build6_testmulti/Curve v2.exe
+C:/Users/Domin/Desktop/Gra PC/Trajectory.exe
 SceneListBegin?
 Assets/Scenes/MainMenu.unity
 Assets/Scenes/Lobby.unity
