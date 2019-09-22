@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -12,8 +13,8 @@ public class TailScript : MonoBehaviour
     public float pointSpacing = .1f;
     public Transform snake;
     //lista punktów na którym jest budowanya linia
-    List<Vector2> points;
-    List<Vector2> pointsCorrected;
+    public List<Vector2> points;
+    public List<Vector2> pointsCorrected;
     Vector2 correct;
 
     LineRenderer line;
@@ -40,6 +41,14 @@ public class TailScript : MonoBehaviour
         {
             SetPoint();
         }
+    }
+
+    public void ResetPoints()
+    {
+        points = new List<Vector2>();
+        pointsCorrected = new List<Vector2>();
+        SetPoint();
+        correct = snake.position;
     }
 
     void SetPoint()

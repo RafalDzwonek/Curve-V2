@@ -1,6 +1,6 @@
 Android
 PlayerPath?
-H:/Projekt/curve_v2_build5_mobile/curve_final.apk
+C:/Users/rafal/OneDrive/Desktop/Curve/curve.apk
 SceneListBegin?
 Assets/Scenes/MainMenu.unity
 Assets/Scenes/Lobby.unity
@@ -140,7 +140,7 @@ eb1f86cca3c47aa1287a5022ededdc3a Assembly-CSharp.dll:Prototype.NetworkLobby.Lobb
 e63944317d2f5958e31963668bb29158 Assembly-CSharp.dll:TMPro.Examples.VertexJitter
 71bb6a6b6c8f052f948db64c7dd3ca4f Unity.Analytics.Editor.dll:UnityEditor.Analytics.AnalyticsEventTrackerEditor
 71bb6a6b6c8f052f948db64c7dd3ca4f Unity.TextMeshPro.dll:TMPro.TMP_SpriteAnimator
-c179884576dfa3822b58dcb9a3434d51 Assembly-CSharp.dll:.TailScript
+1eb52d345da32c0709e3dac262022bb2 Assembly-CSharp.dll:.TailScript
 f3af45f2e4d34c4af609fd3cab9b8373 Assembly-CSharp.dll:Prototype.NetworkLobby.LobbyManager
 4fd8bf02e3089425d3502e26c44ba31a Unity.TextMeshPro.dll:TMPro.TextContainer
 3cae62e09a50c5d5aae8d0536b3d8fde Assembly-CSharp.dll:.ChatController
